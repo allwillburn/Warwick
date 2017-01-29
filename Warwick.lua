@@ -30,7 +30,7 @@ GetWebResultAsync("https://raw.githubusercontent.com/allwillburn/Warwick/master/
 GetLevelPoints = function(unit) return GetLevel(unit) - (GetCastLevel(unit,0)+GetCastLevel(unit,1)+GetCastLevel(unit,2)+GetCastLevel(unit,3)) end
 local SetDCP, SkinChanger = 0
 
-local JaxMenu = Menu("Warwick", "Warwick")
+local WarwickMenu = Menu("Warwick", "Warwick")
 
 WarwickMenu:SubMenu("Combo", "Combo")
 
