@@ -159,7 +159,7 @@ OnTick(function (myHero)
 	    
 	    
             if WarwickMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, 700) and (EnemiesAround(myHeroPos(), 700) >= WarwickMenu.Combo.RX:Value()) then
-			CastTargetSpell(target, _R)
+			CastSkillShot(_R, target)
             end
 
           end
