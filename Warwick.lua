@@ -1,4 +1,4 @@
-local ver = "0.02"
+local ver = "0.03"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -43,6 +43,7 @@ WarwickMenu.Combo:Boolean("Cutlass", "Use Cutlass", true)
 WarwickMenu.Combo:Boolean("Tiamat", "Use Tiamat", true)
 WarwickMenu.Combo:Boolean("BOTRK", "Use BOTRK", true)
 WarwickMenu.Combo:Boolean("RHydra", "Use RHydra", true)
+WarwickMenu.Combo:Boolean("THydra", "Use THydra", true)
 WarwickMenu.Combo:Boolean("YGB", "Use GhostBlade", true)
 WarwickMenu.Combo:Boolean("Gunblade", "Use Gunblade", true)
 WarwickMenu.Combo:Boolean("Randuins", "Use Randuins", true)
@@ -90,6 +91,7 @@ OnTick(function (myHero)
         local BOTRK = GetItemSlot(myHero, 3153)
         local Cutlass = GetItemSlot(myHero, 3144)
         local Randuins = GetItemSlot(myHero, 3143)
+	local THydra = GetItemSlot(myHero, 3748)	
 
 	--AUTO LEVEL UP
 	if WarwickMenu.AutoMode.Level:Value() then
@@ -130,6 +132,10 @@ OnTick(function (myHero)
             if WarwickMenu.Combo.Cutlass:Value() and Cutlass > 0 and Ready(Cutlass) and ValidTarget(target, 700) then
 			 CastTargetSpell(target, Cutlass)
             end
+			
+	    if WarwickMenu.Combo.THydra:Value() and THydra > 0 and Ready(THydra) and ValidTarget(target, 400) then
+			CastSpell(THydra)
+            end			
 
             if WarwickMenu.Combo.E:Value() and Ready(_E) and ValidTarget(target, 700) then
 			 CastSpell(_E)
