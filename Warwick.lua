@@ -165,7 +165,7 @@ OnTick(function (myHero)
 	    end
 	    
 	    
-            if WarwickMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) and (EnemiesAround(myHeroPos(), 700) >= WarwickMenu.Combo.RX:Value()) then
+            if WarwickMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, RRange) and (EnemiesAround(myHeroPos(), RRange) >= WarwickMenu.Combo.RX:Value()) then
 			CastSkillShot(_R, target)
             end
 
