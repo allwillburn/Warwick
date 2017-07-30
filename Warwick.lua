@@ -1,4 +1,4 @@
-local ver = "0.04"
+local ver = "0.05"
 
 
 if FileExist(COMMON_PATH.."MixLib.lua") then
@@ -164,7 +164,7 @@ OnTick(function (myHero)
 	    end
 	    
 	    
-            if WarwickMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, (GetMoveSpeed(myHero) * 2.5) and (EnemiesAround(myHeroPos(), 700) >= WarwickMenu.Combo.RX:Value()) then
+            if WarwickMenu.Combo.R:Value() and Ready(_R) and ValidTarget(target, (GetMoveSpeed(myHero) * 2.5)) and (EnemiesAround(myHeroPos(), 700) >= WarwickMenu.Combo.RX:Value()) then
 			CastSkillShot(_R, target)
             end
 
