@@ -1,12 +1,4 @@
-local ver = "0.07"
-
-
-if FileExist(COMMON_PATH.."MixLib.lua") then
- require('MixLib')
-else
- PrintChat("MixLib not found. Please wait for download.")
- DownloadFileAsync("https://raw.githubusercontent.com/VTNEETS/NEET-Scripts/master/MixLib.lua", COMMON_PATH.."MixLib.lua", function() PrintChat("Downloaded MixLib. Please 2x F6!") return end)
-end
+local ver = "0.08"
 
 
 if GetObjectName(GetMyHero()) ~= "Warwick" then return end
@@ -104,7 +96,7 @@ OnTick(function (myHero)
 	end
         
         --Harass
-          if Mix:Mode() == "Harass" then
+          if IOW:Mode() == "Harass" then
             if WarwickMenu.Harass.Q:Value() and Ready(_Q) and ValidTarget(target, 700) then
 				if target ~= nil then 
                                       CastTargetSpell(target, _Q)
@@ -117,7 +109,7 @@ OnTick(function (myHero)
           end
 
 	--COMBO
-	  if Mix:Mode() == "Combo" then
+	  if IOW:Mode() == "Combo" then
             if WarwickMenu.Combo.YGB:Value() and YGB > 0 and Ready(YGB) and ValidTarget(target, 700) then
 			CastSpell(YGB)
             end
@@ -207,7 +199,7 @@ OnTick(function (myHero)
                 end
       end
 
-      if Mix:Mode() == "LaneClear" then
+      if IOW:Mode() == "LaneClear" then
       	  for _,closeminion in pairs(minionManager.objects) do
 	        if WarwickMenu.LaneClear.Q:Value() and Ready(_Q) and ValidTarget(closeminion, 700) then
 	        	CastTargetSpell(closeminion, _Q)
